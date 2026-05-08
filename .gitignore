@@ -1,0 +1,14 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Llama / local inference cache
+inAssist_additional/engineering/quality/reports/llama_cache/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Llama / local inference cache
+inAssist_additional/engineering/quality/reports/llama_cache/

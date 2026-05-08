@@ -1,0 +1,1313 @@
+﻿{
+    "dataset_name":  "calendar_step_agent_test_mini",
+    "schema_version":  "1.1",
+    "split":  "test_mini",
+    "metric":  "episode_success_rate",
+    "samples":  [
+                    {
+                        "episode_id":  "test_mini_ep_0001",
+                        "episode_type":  "agent_only",
+                        "steps":  [
+                                      {
+                                          "step_id":  1,
+                                          "step_request":  {
+                                                               "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-03T10:00:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+
+                                                                                          ],
+                                                                             "completed_actions":  [
+
+                                                                                                   ],
+                                                                             "tool_observations":  [
+
+                                                                                                   ],
+                                                                             "working_state":  {
+
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "find_event",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "query":  "хирург",
+                                                                                                                                         "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                                         "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                                         "max_results":  10
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.query",
+                                                                                 "next_gateway_action.tool_call.arguments.max_results"
+                                                                             ],
+                                                             "time_paths":  [
+                                                                                "next_gateway_action.tool_call.arguments.time_min",
+                                                                                "next_gateway_action.tool_call.arguments.time_max"
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  2,
+                                          "step_request":  {
+                                                               "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-03T10:00:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "хирург",
+                                                                                                                             "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0001",
+                                                                                                                                            "summary":  "визит к хирургу",
+                                                                                                                                            "start":  "2026-04-07T10:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T10:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "goal":  "swap_two_events",
+                                                                                                   "resolved_entities":  {
+                                                                                                                             "first_event_id":  "test_mini_ev_0001"
+                                                                                                                         }
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "find_event",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "query":  "футбол",
+                                                                                                                                         "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                                         "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                                         "max_results":  10
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.query",
+                                                                                 "next_gateway_action.tool_call.arguments.max_results"
+                                                                             ],
+                                                             "time_paths":  [
+                                                                                "next_gateway_action.tool_call.arguments.time_min",
+                                                                                "next_gateway_action.tool_call.arguments.time_max"
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  3,
+                                          "step_request":  {
+                                                               "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-03T10:00:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "хирург",
+                                                                                                                             "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "футбол",
+                                                                                                                             "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0001",
+                                                                                                                                            "summary":  "визит к хирургу",
+                                                                                                                                            "start":  "2026-04-07T10:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T10:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0002",
+                                                                                                                                            "summary":  "игра в футбол",
+                                                                                                                                            "start":  "2026-04-07T18:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T19:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "goal":  "swap_two_events",
+                                                                                                   "resolved_entities":  {
+                                                                                                                             "first_event_id":  "test_mini_ev_0001",
+                                                                                                                             "second_event_id":  "test_mini_ev_0002"
+                                                                                                                         }
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "update_event",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "event_id":  "test_mini_ev_0001",
+                                                                                                                                         "updates":  {
+                                                                                                                                                         "start_time":  "2026-04-07T18:00:00+03:00",
+                                                                                                                                                         "duration_minutes":  30
+                                                                                                                                                     }
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.event_id",
+                                                                                 "next_gateway_action.tool_call.arguments.updates.duration_minutes"
+                                                                             ],
+                                                             "time_paths":  [
+                                                                                "next_gateway_action.tool_call.arguments.updates.start_time"
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  4,
+                                          "step_request":  {
+                                                               "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-03T10:00:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "хирург",
+                                                                                                                             "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "футбол",
+                                                                                                                             "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "update_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "event_id":  "test_mini_ev_0001",
+                                                                                                                             "updates":  {
+                                                                                                                                             "start_time":  "2026-04-07T18:00:00+03:00",
+                                                                                                                                             "duration_minutes":  30
+                                                                                                                                         }
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0001",
+                                                                                                                                            "summary":  "визит к хирургу",
+                                                                                                                                            "start":  "2026-04-07T10:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T10:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0002",
+                                                                                                                                            "summary":  "игра в футбол",
+                                                                                                                                            "start":  "2026-04-07T18:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T19:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "update_event",
+                                                                                                           "result":  {
+                                                                                                                          "event":  {
+                                                                                                                                        "id":  "test_mini_ev_0001",
+                                                                                                                                        "summary":  "визит к хирургу",
+                                                                                                                                        "start":  "2026-04-07T18:00:00+03:00",
+                                                                                                                                        "end":  "2026-04-07T18:30:00+03:00"
+                                                                                                                                    }
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "goal":  "swap_two_events",
+                                                                                                   "resolved_entities":  {
+                                                                                                                             "first_event_id":  "test_mini_ev_0001",
+                                                                                                                             "second_event_id":  "test_mini_ev_0002"
+                                                                                                                         }
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "update_event",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "event_id":  "test_mini_ev_0002",
+                                                                                                                                         "updates":  {
+                                                                                                                                                         "start_time":  "2026-04-07T10:00:00+03:00",
+                                                                                                                                                         "duration_minutes":  90
+                                                                                                                                                     }
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.event_id",
+                                                                                 "next_gateway_action.tool_call.arguments.updates.duration_minutes"
+                                                                             ],
+                                                             "time_paths":  [
+                                                                                "next_gateway_action.tool_call.arguments.updates.start_time"
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  5,
+                                          "step_request":  {
+                                                               "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-03T10:00:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Поменяй местами на вторник визит к хирургу и игру в футбол."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "хирург",
+                                                                                                                             "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "футбол",
+                                                                                                                             "time_min":  "2026-04-07T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-07T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "update_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "event_id":  "test_mini_ev_0001",
+                                                                                                                             "updates":  {
+                                                                                                                                             "start_time":  "2026-04-07T18:00:00+03:00",
+                                                                                                                                             "duration_minutes":  30
+                                                                                                                                         }
+                                                                                                                         }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "update_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "event_id":  "test_mini_ev_0002",
+                                                                                                                             "updates":  {
+                                                                                                                                             "start_time":  "2026-04-07T10:00:00+03:00",
+                                                                                                                                             "duration_minutes":  90
+                                                                                                                                         }
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0001",
+                                                                                                                                            "summary":  "визит к хирургу",
+                                                                                                                                            "start":  "2026-04-07T10:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T10:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0002",
+                                                                                                                                            "summary":  "игра в футбол",
+                                                                                                                                            "start":  "2026-04-07T18:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T19:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "update_event",
+                                                                                                           "result":  {
+                                                                                                                          "event":  {
+                                                                                                                                        "id":  "test_mini_ev_0001",
+                                                                                                                                        "summary":  "визит к хирургу",
+                                                                                                                                        "start":  "2026-04-07T18:00:00+03:00",
+                                                                                                                                        "end":  "2026-04-07T18:30:00+03:00"
+                                                                                                                                    }
+                                                                                                                      }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "update_event",
+                                                                                                           "result":  {
+                                                                                                                          "event":  {
+                                                                                                                                        "id":  "test_mini_ev_0002",
+                                                                                                                                        "summary":  "игра в футбол",
+                                                                                                                                        "start":  "2026-04-07T10:00:00+03:00",
+                                                                                                                                        "end":  "2026-04-07T11:30:00+03:00"
+                                                                                                                                    }
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "goal":  "swap_two_events",
+                                                                                                   "status":  "done",
+                                                                                                   "resolved_entities":  {
+                                                                                                                             "first_event_id":  "test_mini_ev_0001",
+                                                                                                                             "second_event_id":  "test_mini_ev_0002"
+                                                                                                                         }
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "finish",
+                                                                         "assistant_message":  "Готово: визит к хирургу перенесён на 18:00, а футбол — на 10:00.",
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "none",
+                                                                                                     "tool_call":  null
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type"
+                                                                             ],
+                                                             "time_paths":  [
+
+                                                                            ]
+                                                         }
+                                      }
+                                  ]
+                    },
+                    {
+                        "episode_id":  "test_mini_ep_0002",
+                        "episode_type":  "agent_only",
+                        "steps":  [
+                                      {
+                                          "step_id":  1,
+                                          "step_request":  {
+                                                               "text":  "Если во вторник в 16:00 ничего нет, поставь собрание на 30 минут.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-01T09:20:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+
+                                                                                          ],
+                                                                             "completed_actions":  [
+
+                                                                                                   ],
+                                                                             "tool_observations":  [
+
+                                                                                                   ],
+                                                                             "working_state":  {
+
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "get_free_slots",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "start":  "2026-04-07T16:00:00+03:00",
+                                                                                                                                         "end":  "2026-04-07T16:30:00+03:00",
+                                                                                                                                         "min_duration_minutes":  30
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.min_duration_minutes"
+                                                                             ],
+                                                             "time_paths":  [
+                                                                                "next_gateway_action.tool_call.arguments.start",
+                                                                                "next_gateway_action.tool_call.arguments.end"
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  2,
+                                          "step_request":  {
+                                                               "text":  "Если во вторник в 16:00 ничего нет, поставь собрание на 30 минут.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-01T09:20:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Если во вторник в 16:00 ничего нет, поставь собрание на 30 минут."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "get_free_slots",
+                                                                                                           "arguments":  {
+                                                                                                                             "start":  "2026-04-07T16:00:00+03:00",
+                                                                                                                             "end":  "2026-04-07T16:30:00+03:00",
+                                                                                                                             "min_duration_minutes":  30
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "get_free_slots",
+                                                                                                           "result":  {
+                                                                                                                          "slots":  [
+                                                                                                                                        {
+                                                                                                                                            "start":  "2026-04-07T16:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T16:30:00+03:00"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "create_event",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "title":  "собрание",
+                                                                                                                                         "start_time":  "2026-04-07T16:00:00+03:00",
+                                                                                                                                         "duration_minutes":  30
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.title",
+                                                                                 "next_gateway_action.tool_call.arguments.duration_minutes"
+                                                                             ],
+                                                             "time_paths":  [
+                                                                                "next_gateway_action.tool_call.arguments.start_time"
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  3,
+                                          "step_request":  {
+                                                               "text":  "Если во вторник в 16:00 ничего нет, поставь собрание на 30 минут.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-01T09:20:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Если во вторник в 16:00 ничего нет, поставь собрание на 30 минут."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "get_free_slots",
+                                                                                                           "arguments":  {
+                                                                                                                             "start":  "2026-04-07T16:00:00+03:00",
+                                                                                                                             "end":  "2026-04-07T16:30:00+03:00",
+                                                                                                                             "min_duration_minutes":  30
+                                                                                                                         }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "create_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "title":  "собрание",
+                                                                                                                             "start_time":  "2026-04-07T16:00:00+03:00",
+                                                                                                                             "duration_minutes":  30
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "get_free_slots",
+                                                                                                           "result":  {
+                                                                                                                          "slots":  [
+                                                                                                                                        {
+                                                                                                                                            "start":  "2026-04-07T16:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-07T16:30:00+03:00"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "create_event",
+                                                                                                           "result":  {
+                                                                                                                          "event":  {
+                                                                                                                                        "id":  "test_mini_ev_0003",
+                                                                                                                                        "summary":  "собрание",
+                                                                                                                                        "start":  "2026-04-07T16:00:00+03:00",
+                                                                                                                                        "end":  "2026-04-07T16:30:00+03:00"
+                                                                                                                                    }
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "status":  "done"
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "finish",
+                                                                         "assistant_message":  "Готово, поставил собрание на вторник с 16:00 до 16:30.",
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "none",
+                                                                                                     "tool_call":  null
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type"
+                                                                             ],
+                                                             "time_paths":  [
+
+                                                                            ]
+                                                         }
+                                      }
+                                  ]
+                    },
+                    {
+                        "episode_id":  "test_mini_ep_0003",
+                        "episode_type":  "agent_only",
+                        "steps":  [
+                                      {
+                                          "step_id":  1,
+                                          "step_request":  {
+                                                               "text":  "Если во вторник в 16:00 ничего нет, поставь собрание на 30 минут.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-01T09:40:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+
+                                                                                          ],
+                                                                             "completed_actions":  [
+
+                                                                                                   ],
+                                                                             "tool_observations":  [
+
+                                                                                                   ],
+                                                                             "working_state":  {
+
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "get_free_slots",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "start":  "2026-04-07T16:00:00+03:00",
+                                                                                                                                         "end":  "2026-04-07T16:30:00+03:00",
+                                                                                                                                         "min_duration_minutes":  30
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.min_duration_minutes"
+                                                                             ],
+                                                             "time_paths":  [
+                                                                                "next_gateway_action.tool_call.arguments.start",
+                                                                                "next_gateway_action.tool_call.arguments.end"
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  2,
+                                          "step_request":  {
+                                                               "text":  "Если во вторник в 16:00 ничего нет, поставь собрание на 30 минут.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-01T09:40:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Если во вторник в 16:00 ничего нет, поставь собрание на 30 минут."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "get_free_slots",
+                                                                                                           "arguments":  {
+                                                                                                                             "start":  "2026-04-07T16:00:00+03:00",
+                                                                                                                             "end":  "2026-04-07T16:30:00+03:00",
+                                                                                                                             "min_duration_minutes":  30
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "get_free_slots",
+                                                                                                           "result":  {
+                                                                                                                          "slots":  [
+
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "goal":  "conditional_create_if_free"
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "clarify",
+                                                                         "assistant_message":  "Во вторник в 16:00 занято. Подобрать другое время для собрания или ничего не создавать?",
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "none",
+                                                                                                     "tool_call":  null
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type"
+                                                                             ],
+                                                             "time_paths":  [
+
+                                                                            ]
+                                                         }
+                                      }
+                                  ]
+                    },
+                    {
+                        "episode_id":  "test_mini_ep_0004",
+                        "episode_type":  "agent_only",
+                        "steps":  [
+                                      {
+                                          "step_id":  1,
+                                          "step_request":  {
+                                                               "text":  "Удали встречу с Катей в четверг.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-06T10:10:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+
+                                                                                          ],
+                                                                             "completed_actions":  [
+
+                                                                                                   ],
+                                                                             "tool_observations":  [
+
+                                                                                                   ],
+                                                                             "working_state":  {
+
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "find_event",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "query":  "Катя",
+                                                                                                                                         "time_min":  "2026-04-09T00:00:00+03:00",
+                                                                                                                                         "time_max":  "2026-04-09T23:59:00+03:00",
+                                                                                                                                         "max_results":  10
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.query",
+                                                                                 "next_gateway_action.tool_call.arguments.max_results"
+                                                                             ],
+                                                             "time_paths":  [
+                                                                                "next_gateway_action.tool_call.arguments.time_min",
+                                                                                "next_gateway_action.tool_call.arguments.time_max"
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  2,
+                                          "step_request":  {
+                                                               "text":  "Удали встречу с Катей в четверг.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-06T10:10:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Удали встречу с Катей в четверг."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "Катя",
+                                                                                                                             "time_min":  "2026-04-09T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-09T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0004",
+                                                                                                                                            "summary":  "встреча с Катей по документам",
+                                                                                                                                            "start":  "2026-04-09T09:30:00+03:00",
+                                                                                                                                            "end":  "2026-04-09T10:00:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0005",
+                                                                                                                                            "summary":  "встреча с Катей по квартире",
+                                                                                                                                            "start":  "2026-04-09T17:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-09T17:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "goal":  "delete_event",
+                                                                                                   "status":  "needs_disambiguation"
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "clarify",
+                                                                         "assistant_message":  "Нашёл две встречи с Катей в четверг: 09:30 — по документам и 17:00 — по квартире. Какую удалить?",
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "none",
+                                                                                                     "tool_call":  null
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type"
+                                                                             ],
+                                                             "time_paths":  [
+
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  3,
+                                          "step_request":  {
+                                                               "text":  "Утреннюю, в 09:30.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-06T10:10:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Удали встречу с Катей в четверг."
+                                                                                              },
+                                                                                              {
+                                                                                                  "role":  "assistant",
+                                                                                                  "text":  "Нашёл две встречи с Катей в четверг: 09:30 — по документам и 17:00 — по квартире. Какую удалить?"
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "Катя",
+                                                                                                                             "time_min":  "2026-04-09T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-09T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0004",
+                                                                                                                                            "summary":  "встреча с Катей по документам",
+                                                                                                                                            "start":  "2026-04-09T09:30:00+03:00",
+                                                                                                                                            "end":  "2026-04-09T10:00:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0005",
+                                                                                                                                            "summary":  "встреча с Катей по квартире",
+                                                                                                                                            "start":  "2026-04-09T17:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-09T17:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "goal":  "delete_event",
+                                                                                                   "resolved_entities":  {
+                                                                                                                             "selected_event_id":  "test_mini_ev_0004"
+                                                                                                                         }
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "tool_call",
+                                                                         "assistant_message":  null,
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "tool_call",
+                                                                                                     "tool_call":  {
+                                                                                                                       "tool_name":  "delete_event",
+                                                                                                                       "arguments":  {
+                                                                                                                                         "event_id":  "test_mini_ev_0004"
+                                                                                                                                     }
+                                                                                                                   }
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type",
+                                                                                 "next_gateway_action.tool_call.tool_name",
+                                                                                 "next_gateway_action.tool_call.arguments.event_id"
+                                                                             ],
+                                                             "time_paths":  [
+
+                                                                            ]
+                                                         }
+                                      },
+                                      {
+                                          "step_id":  4,
+                                          "step_request":  {
+                                                               "text":  "Утреннюю, в 09:30.",
+                                                               "context":  {
+                                                                               "current_time":  "2026-04-06T10:10:00+03:00",
+                                                                               "timezone":  "Europe/Moscow",
+                                                                               "work_start_hour":  9,
+                                                                               "work_end_hour":  18
+                                                                           },
+                                                               "state":  {
+                                                                             "messages":  [
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Удали встречу с Катей в четверг."
+                                                                                              },
+                                                                                              {
+                                                                                                  "role":  "assistant",
+                                                                                                  "text":  "Нашёл две встречи с Катей в четверг: 09:30 — по документам и 17:00 — по квартире. Какую удалить?"
+                                                                                              },
+                                                                                              {
+                                                                                                  "role":  "user",
+                                                                                                  "text":  "Утреннюю, в 09:30."
+                                                                                              }
+                                                                                          ],
+                                                                             "completed_actions":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "query":  "Катя",
+                                                                                                                             "time_min":  "2026-04-09T00:00:00+03:00",
+                                                                                                                             "time_max":  "2026-04-09T23:59:00+03:00",
+                                                                                                                             "max_results":  10
+                                                                                                                         }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "delete_event",
+                                                                                                           "arguments":  {
+                                                                                                                             "event_id":  "test_mini_ev_0004"
+                                                                                                                         }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "tool_observations":  [
+                                                                                                       {
+                                                                                                           "tool_name":  "find_event",
+                                                                                                           "result":  {
+                                                                                                                          "items":  [
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0004",
+                                                                                                                                            "summary":  "встреча с Катей по документам",
+                                                                                                                                            "start":  "2026-04-09T09:30:00+03:00",
+                                                                                                                                            "end":  "2026-04-09T10:00:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "id":  "test_mini_ev_0005",
+                                                                                                                                            "summary":  "встреча с Катей по квартире",
+                                                                                                                                            "start":  "2026-04-09T17:00:00+03:00",
+                                                                                                                                            "end":  "2026-04-09T17:30:00+03:00",
+                                                                                                                                            "status":  "confirmed"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                       },
+                                                                                                       {
+                                                                                                           "tool_name":  "delete_event",
+                                                                                                           "result":  {
+                                                                                                                          "deleted_event_id":  "test_mini_ev_0004"
+                                                                                                                      }
+                                                                                                       }
+                                                                                                   ],
+                                                                             "working_state":  {
+                                                                                                   "goal":  "delete_event",
+                                                                                                   "status":  "done"
+                                                                                               },
+                                                                             "memory_summary":  ""
+                                                                         },
+                                                               "conversation":  null,
+                                                               "all_context":  null
+                                                           },
+                                          "expected_step_response":  {
+                                                                         "response_type":  "finish",
+                                                                         "assistant_message":  "Готово, утреннюю встречу с Катей в четверг удалил.",
+                                                                         "response_payload":  {
+
+                                                                                              },
+                                                                         "next_gateway_action":  {
+                                                                                                     "type":  "none",
+                                                                                                     "tool_call":  null
+                                                                                                 },
+                                                                         "state_patch":  {
+
+                                                                                         }
+                                                                     },
+                                          "evaluation":  {
+                                                             "critical":  true,
+                                                             "field_paths":  [
+                                                                                 "response_type",
+                                                                                 "next_gateway_action.type"
+                                                                             ],
+                                                             "time_paths":  [
+
+                                                                            ]
+                                                         }
+                                      }
+                                  ]
+                    }
+                ]
+}

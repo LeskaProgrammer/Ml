@@ -1,0 +1,15 @@
+{
+  "base_model": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "use_adapter": false,
+  "adapter_path": "../training/models/llama-json-intent-lora",
+  "gguf_model_path": "../../models/adapter_step_newtrain_full_learn_Q4_K_M.gguf",
+  "test_data_path": "data/broken_test_new.json",
+  "metrics_path": "reports/step_metrics.json",
+  "details_jsonl_path": "reports/step_details.jsonl",
+  "use_llama_prompt_cache": true,
+  "llama_cache_dir": "reports/llama_cache",
+  "llama_cache_size_bytes": 1073741824,
+  "max_new_tokens": 512,
+  "temperature": 0.0,
+  "run_name": "llama_step_eval"
+}
